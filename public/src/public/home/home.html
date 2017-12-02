@@ -1,0 +1,23 @@
+<div id="main-content" class="container">
+  <div class="jumbotron">
+    <img src="images/jumbotron_768.jpg" alt="Picture of restaurant" class="img-responsive visible-xs">
+  </div>
+  <div id="home-tiles" class="row">
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <a ui-sref="public.menu"><div id="menu-tile"><span>menu</span></div></a>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <a ui-sref="public.menuitems({category: 'SP'})">
+        <div id="specials-tile"><span>specials</span></div>
+      </a>
+    </div>
+    <div class="col-md-4 col-sm-12 col-xs-12">
+      <a href="https://www.google.com/maps/place/3111+St+Paul+St,+Baltimore,+MD+21218/@39.32627,-76.617825,17z/data=!3m1!4b1!4m5!3m4!1s0x89c804e0ff53871b:0x700f73c21294c240!8m2!3d39.32627!4d-76.6156363" target="_blank">
+        <div id="map-tile">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6172.645725318813!2d-76.615636!3d39.32627!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c804e0ff53871b%3A0x700f73c21294c240!2s3111+St+Paul+St%2C+Baltimore%2C+MD+21218!5e0!3m2!1sen!2sus!4v1511987174433" width="450" height="225" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <span>map</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
