@@ -3,10 +3,7 @@
 <form name="mmmm.form" novalidate>
   <div class="form-group">
     <div>
-      <img class="img-responsive img-rounded admin-img"
-       ng-if="!mmmm.file"
-       src="../images/menu-categorys/{{mmmm.menuItem.short_name}}.jpg?{{mmmm.cacheBuster}}">
-
+      
       <div class="form-group">
         <img class="img-responsive img-rounded admin-img"
           ngf-src="mmmm.file">
@@ -17,7 +14,7 @@
           ng-model="mmmm.file"
           ngf-select=""
         >Choose</button>
-        <span class="small">Image must be 250w X 150h pixels</span>
+        <span class="small"></span>
       </div>
 
     </div>

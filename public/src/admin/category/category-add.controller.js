@@ -19,7 +19,7 @@ function CategoryAddController(MenuService, ApiPath, Upload,$http) {
         url: '/upload',
         file:image,
         data:{
-          short_name:dataJson.short_name
+          short_name:dataJson.name
         }
       }).then(function (resp) { 
         console.log(resp.data.fileName);
