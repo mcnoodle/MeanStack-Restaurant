@@ -52,19 +52,19 @@
                 $(window).on('resize', resize);
 		resize();
 		function resize(){
-	          var wHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+	          //var wHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 		  var wWidth = $(window).width();
-	          var maxWidth = window.screen.availWidth*0.8; // the max width of the canvas should not be more than 80% of the screen
+	          var maxWidth = window.screen.availWidth*0.38; // the max width of the canvas should not be more than 80% of the screen
 		  wWidth = wWidth < maxWidth ? wWidth : maxWidth; // check if the width is larger the maximum allowed
 		  var ratio = canvas.width/canvas.height;
-		  
+		  /*
 	          if(wWidth/wHeight > ratio){
 		        wWidth = wHeight*ratio;
 		  }else{
 		        wHeight = wWidth/ratio;
-		  }
+		  }*/
 	      canvas.style.width = wWidth+'px';
-	      canvas.style.height = wHeight+'px';
+	      canvas.style.height = wWidth/ratio +'px';
         } 
     </script>
     </body>

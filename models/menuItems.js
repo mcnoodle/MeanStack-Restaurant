@@ -66,7 +66,7 @@ module.exports.getMenuItems = function(categoryName,callback) {
   exec(callback);
 };
 
-module.exports.editMenuItem = function(menuItem, callback) { console.log(menuCategory.findOneAndUpdate({ _id: menuItem._id}, { $set: { id: menuItem.id, description: menuItem.description, image_present: menuItem.image_present, large_portion_name: menuItem.large_portion_name,name:menuItem.name,price_large: menuItem.price_large,price_small:menuItem.price_small,short_name: menuItem.short_name,small_portion_name:menuItem.small_portion_name   }}));
+module.exports.editMenuItem = function(menuItem, callback) { /*console.log(menuCategory.findOneAndUpdate({ _id: menuItem._id}, { $set: { id: menuItem.id, description: menuItem.description, image_present: menuItem.image_present, large_portion_name: menuItem.large_portion_name,name:menuItem.name,price_large: menuItem.price_large,price_small:menuItem.price_small,short_name: menuItem.short_name,small_portion_name:menuItem.small_portion_name   }}));*/
   menuCategory.findOneAndUpdate(
     { _id: menuItem._id}, 
     { $set: 
