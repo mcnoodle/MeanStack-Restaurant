@@ -1,7 +1,74 @@
 <div id="main-content" class="container">
-  <div class="jumbotron">
-    <img src="images/jumbotron_768.jpg" alt="Picture of restaurant" class="img-responsive visible-xs">
-  </div>
+<div>
+<head>
+    <meta charset="utf-8" />
+    <title>Swoosh</title>
+	<style>
+	   canvas {
+	    padding: 0;
+            margin: auto;
+            display: block;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+	    background: white;
+        }
+	</style>
+</head>
+<body bgcolor="#000000">
+    <p align="center">
+        <canvas id = "gallery" ></canvas>
+    </p>
+	<script id = "data" type="text/javascript" src="jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+        var canvas = $("#gallery")[0];
+		var ctx = canvas.getContext('2d');
+		var rows = 2;
+                var cols = 2;
+        var	imgWidth = 600; //width of a single image
+	
+        var imgHeight = 400; // height of a single image
+		canvas.width = imgWidth*cols;
+		canvas.height = imgHeight*rows;
+		var count = 0; 
+        for(var i = 0; i < rows; i++ ){
+		for(var j = 0; j < cols;j++ ){
+			   var image = new Image();
+			   count++; //when using different images named image1, image2, image3......
+			   var x = j*imgWidth*1.01;
+			   var y = i*imgHeight*1.01;
+			   (function(ctx, image,count,x, y,imgWidth,imgHeight ) {
+                                  image.onload = function(){
+			            ctx.drawImage(image,x,y,imgWidth,imgHeight);
+                            }
+                             image.src = "images/image" + count + ".jpg";
+					
+                            })(ctx, image,count,x, y,imgWidth,imgHeight );  
+	         }
+			                        
+	}
+		
+                $(window).on('resize', resize);
+		resize();
+		function resize(){
+	          var wHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		  var wWidth = $(window).width();
+	          var maxWidth = window.screen.availWidth*0.8; // the max width of the canvas should not be more than 80% of the screen
+		  wWidth = wWidth < maxWidth ? wWidth : maxWidth; // check if the width is larger the maximum allowed
+		  var ratio = canvas.width/canvas.height;
+		  
+	          if(wWidth/wHeight > ratio){
+		        wWidth = wHeight*ratio;
+		  }else{
+		        wHeight = wWidth/ratio;
+		  }
+	      canvas.style.width = wWidth+'px';
+	      canvas.style.height = wHeight+'px';
+        } 
+    </script>
+    </body>
+   </div>
   <div id="home-tiles" class="row">
     <div class="col-md-4 col-sm-6 col-xs-12">
       <a ui-sref="public.menu"><div id="menu-tile"><span>menu</span></div></a>

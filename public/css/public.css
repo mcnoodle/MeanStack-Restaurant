@@ -18,10 +18,12 @@
 #menu-tile {
   background: url('../images/menu-tile.jpg') no-repeat;
   background-position: center;
+  background-size: 100% auto; 
 }
 #specials-tile {
   background: url('../images/specials-tile.jpg') no-repeat;
   background-position: center;
+  background-size: 100% auto; 
 }
 #menu-tile span, #specials-tile span, #map-tile span {
   position: absolute;
@@ -32,6 +34,7 @@
   font-size: 1.6em;
   text-transform: uppercase;
   background-color: #000;
+  
   color: #fff;
   opacity: .8;
 }
@@ -43,7 +46,7 @@
   border: 2px solid #91b4c0;
   overflow: hidden;
   width: 200px;
-  height: 200px;
+  height: 170px;
   margin: 0 auto 15px;
 }
 .category-tile span {

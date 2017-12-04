@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Swoosh</title>
+	<style>
+		canvas {
+	        padding: 0;
+            margin: auto;
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+			background: white;
+        }
+	</style>
+</head>
+<body bgcolor="#000000">
+    <p align="center">
+        <canvas id = "swoosh" ></canvas>
+    </p>
+	<script id = "data" type="text/javascript" src="data.js"></script>
+    <script type="text/javascript">
+        var canvas = document.getElementById('swoosh');
+		var ctx = canvas.getContext('2d');
+		var height = starts.length;
+        var	imgWidth = 100; // just set a value that is large enough for displaying the image
+		                    // or we can load an image first to get the dimentions 
+        var imgHeight = 100; //
+		canvas.width = imgWidth*width + 2*imgWidth;
+		canvas.height = imgHeight*height + 1.5*imgHeight;
+		var count = 0; 
+        for(var i = 0; i < height; i++ ){
+		    for(var j =starts[i]; j < ends[i];j++ ){
+			   var image = new Image();
+			   //count++; //when using different images named image1, image2, image3......
+			   var x = (j+1)*imgWidth;
+			   var y = (i+0.5)*imgHeight;
+			   (function(ctx, image,count,x, y,imgWidth,imgHeight ) {
+                    image.onload = function(){
+			            ctx.drawImage(image,x,y,imgWidth,imgHeight);
+                    }
+                    image.src = "image" + count + ".png";
+					
+               })(ctx, image,count,x, y,imgWidth,imgHeight );  
+			}
+			                        
+		}
+		window.addEventListener('resize', resize, false);
+		resize();
+		function resize(){
+	      var wHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		  var wWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	      var maxWidth = window.screen.availWidth*0.6; // the max width of the canvas should not be more than 60% of the screen
+		  wWidth = wWidth < maxWidth ? wWidth : maxWidth; // check if the width is larger the maximum allowed
+		  var ratio = width/height;
+		  
+	      if(wWidth/wHeight > ratio){
+		        wWidth = wHeight*ratio;
+		  }else{
+		        wHeight = wWidth/ratio;
+		  }
+	      canvas.style.width = wWidth+'px';
+	      canvas.style.height = wHeight+'px';
+        } 
+    </script>
+</body>
+</html>
